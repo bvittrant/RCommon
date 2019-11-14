@@ -1,0 +1,12 @@
+Package: RCommon
+Type: Package
+Title: Basic functions
+Version: 0.17.2
+Author: Benjamin Vittrant
+Maintainer: The package maintainer 
+Description: 
+License: Only internal use
+Encoding: UTF-8
+LazyData: true
+NeedsCompilation: no
+Packaged: 2019-10-23 09:10:33 UTC; bnvt_cb
