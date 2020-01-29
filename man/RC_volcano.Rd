@@ -56,8 +56,6 @@ If you know where the volcano plot come from just let me know !
 ## The function is currently defined as
 
 }
-
-}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")

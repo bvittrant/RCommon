@@ -1,2 +1,2 @@
 exportPattern("^[[:alpha:]]+")
-import(FactoMineR,ggplot2,tidyverse,reshape2)
+import(FactoMineR,ggplot2,tidyverse,reshape2,factorextra)
