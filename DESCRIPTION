@@ -15,5 +15,6 @@ Imports:
   ggplot2,
   tidyverse,
   reshape2,
-  factoextra
+  factoextra,
+  viridis
 	
