@@ -3,7 +3,7 @@ Type: Package
 Title: Basic functions
 Version: 0.17.2
 Author: Benjamin Vittrant
-Maintainer: Benjamin Vittrant 
+Maintainer: Benjamin Vittrant <bv.research@protonmail.com>
 Description: 
 License: MIT
 Encoding: UTF-8
