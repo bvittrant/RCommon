@@ -4,9 +4,15 @@ Title: Basic functions
 Version: 0.17.2
 Author: Benjamin Vittrant
 Maintainer: Benjamin Vittrant <bv.research@protonmail.com>
-Description: 
+Description: A package with basic R function i made
 License: MIT
 Encoding: UTF-8
 LazyData: true
 NeedsCompilation: no
 Packaged: 2019-10-23 09:10:33 UTC; bnvt_cb
+Imports:
+  FactoMineR,
+  ggplot2,
+  tidyverse,
+  reshape2
+	

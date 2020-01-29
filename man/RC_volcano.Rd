@@ -54,58 +54,7 @@ If you know where the volcano plot come from just let me know !
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-RC_volcano = function(res, t_pvalue, t_FC, contrast2, Fold, Stat, xlim, np){
-  # res, a dataframe containing DE results from any package
-  # t_pvalue & t_FC are defined threshold by yourself
-  # contrast2, just a name
-  # Fold, the colname to use as FC value from your res
-  # Stat, the colname to use a statistics from your res,
-  # Number of name to plot in the graph
-  # xlim, just xlim for the plot
-  # np = number of point label to show
-  res_VP = res %>% as.data.frame
-  res_VP = na.omit(res_VP)
-  res_VP$names = row.names(res_VP) %>% as.factor
-  res_VP$names = row.names(res_VP)
 
-  # Color for up, none and down features
-  Up = "#E64B35"
-  None = "Gray"
-  Down = "#3182bd"
-
-  # Add a color column
-  res_VP$color = "None"
-  res_VP[(res_VP[, Stat] < t_pvalue & res_VP[, Fold] > t_FC),"color"] = "Up"
-  res_VP[(res_VP[, Stat] < t_pvalue & res_VP[, Fold] < -t_FC),"color"] = "Down"
-  res_VP$Y = -log10(res_VP[, Stat])
-
-  g = ggplot(res_VP, aes_string(x=Fold, y = "Y")) +
-    # Add points
-    geom_point(aes(text=names, colour = factor(color))) +
-    # Add horizontal line
-    geom_hline(yintercept=-log10(t_pvalue), linetype="dashed", size = 0.3) +
-    # Add vertical lines
-    geom_vline(xintercept = -t_FC, linetype="dashed", size = 0.3  ) +
-    geom_vline(xintercept = t_FC, linetype="dashed", size = 0.3) +
-    # Add axes labels
-    xlab(Fold) + ylab(paste("-log10", Stat, sep = " ")) +
-    # Define xlim
-    xlim(c(-xlim, xlim)) +
-    # Chose theme and color
-    theme_bw() + scale_color_manual(values = c("Up" = Up,
-                                               "Down" = Down,
-                                               "None" = None)) +
-    theme(legend.position="none", plot.title = element_text(hjust = 0.5)) +
-    # Add title
-    ggtitle(paste(contrast2, collapse = " vs ")) +
-    # Add point names
-    #geom_text(aes(label=ifelse(abs(FC)> n, names,'')), nudge_x = 1, nudge_y = 1)
-    geom_text_repel(data = top_n(res_VP, n = np, wt = abs(FC)),
-                    mapping = aes(label = names),
-                    fontface = 'bold',color = 'black',
-                    box.padding = unit(0.5, "lines"), point.padding = unit(0.5, "lines"))
-
-  return(g)
 }
 
 }
