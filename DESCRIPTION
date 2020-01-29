@@ -16,5 +16,6 @@ Imports:
   tidyverse,
   reshape2,
   factoextra,
-  viridis
+  viridis,
+  viridisLite
 	
