@@ -3,9 +3,9 @@ Type: Package
 Title: Basic functions
 Version: 0.17.2
 Author: Benjamin Vittrant
-Maintainer: The package maintainer 
+Maintainer: Benjamin Vittrant 
 Description: 
-License: Only internal use
+License: MIT
 Encoding: UTF-8
 LazyData: true
 NeedsCompilation: no
