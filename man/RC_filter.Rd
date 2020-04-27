@@ -57,7 +57,7 @@ RC_filter = function(Data, Filter, NSample){
   # Some printing
   print(paste("Start : ", ncol(Data), sep=""))
   print(paste("End : ", ncol(Data_filtered), sep=""))
-  print(paste("Diff : ", (ncol(Data)-nrow(Data_filtered)), sep=""))
+  print(paste("Diff : ", (ncol(Data)-ncol(Data_filtered)), sep=""))
   return(Data_filtered)
 }
 }
