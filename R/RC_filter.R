@@ -8,11 +8,11 @@ RC_filter = function(Data, Filter, NSample){
   # We used this value as filter and then we re-transformed it to be
   # coherent with raw counts
   # Data_t = as.data.frame(t(Data))
-  tmp = apply(Data>Filter,1,FUN=function(x)sum(x=="TRUE")) > NSample
-  Data_filtered = Data[tmp,]
+  tmp = apply(Data>Filter,2,FUN=function(x)sum(x=="TRUE")) > NSample
+  Data_filtered = Data[, colnames(Data) %in% colnames(Data)[tmp]]
   # Some printing
   print(paste("Start : ", ncol(Data), sep=""))
-  print(paste("End : ", nrow(Data_filtered), sep=""))
+  print(paste("End : ", ncol(Data_filtered), sep=""))
   print(paste("Diff : ", (ncol(Data)-nrow(Data_filtered)), sep=""))
   return(Data_filtered)
 }
