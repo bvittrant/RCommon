@@ -7,12 +7,12 @@ RC_filter = function(Data, Filter, NSample){
   # Because we usually choose a filter from a log2 transfo density graph
   # We used this value as filter and then we re-transformed it to be
   # coherent with raw counts
-  Data_t = as.data.frame(t(Data))
-  tmp = apply(Data_t>Filter,1,FUN=function(x)sum(x=="TRUE")) > NSample
-  Data_t_filtered = Data_t[tmp,]
-  # SOme printing
+  # Data_t = as.data.frame(t(Data))
+  tmp = apply(Data>Filter,1,FUN=function(x)sum(x=="TRUE")) > NSample
+  Data_filtered = Data[tmp,]
+  # Some printing
   print(paste("Start : ", ncol(Data), sep=""))
-  print(paste("End : ", nrow(Data_t_filtered), sep=""))
-  print(paste("Diff : ", (ncol(Data)-nrow(Data_t_filtered)), sep=""))
-  return(Data_t_filtered)
+  print(paste("End : ", nrow(Data_filtered), sep=""))
+  print(paste("Diff : ", (ncol(Data)-nrow(Data_filtered)), sep=""))
+  return(Data_filtered)
 }
